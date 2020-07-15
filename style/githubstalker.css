@@ -1,8 +1,50 @@
+
+
 body{
     text-align: center;
 }
 
+header {
+  height: 50%;
+  margin-bottom: 15px;
+  font-size: 45px;
+  font-family: 'Lexend Zetta', sans-serif;
+  padding: 1%;
 
+}
+
+
+
+#input {
+  border: none;
+  border-bottom: 1px solid black;  
+  font-size: 15px;
+}
+
+#input:focus , select:focus {
+  box-shadow: 0 0 0 0;
+  outline: 0;
+} 
+
+#button {
+  border: 0;
+  background: none;
+  font-size: 15px;
+  transition: 0.3s;
+
+}
+
+#button:hover {
+
+  
+  color: gray;
+  font-size: 16px;
+  
+}
+#button:focus , select:focus {
+  box-shadow: 0 0 0 0;
+  outline: 0;
+} 
 
 img {
     width: 250px;
@@ -10,10 +52,10 @@ img {
 }
 
 .container {
-    padding-top: 5%;
-    display: flex;
-    flex-direction: row-reverse;
-    justify-content: stretch;
+  padding-top: 5%;
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: stretch;
 
 }
 
@@ -50,3 +92,12 @@ img {
     box-shadow: 0 2px 4px 0 rgba(0,0,0,0.2);
   }
   
+a {
+  text-decoration: none;
+  color: black;
+  transition: 0.3s;
+}
+
+a:hover {
+  color: gray;
+}
