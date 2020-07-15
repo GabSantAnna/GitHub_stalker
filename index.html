@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+
+<html lang="Pt-br">
+    <head>
+         <meta charset="UTF-8">
+         <link rel="stylesheet" href="style/githubstalker.css" >
+    </head>
+
+    <body>
+        <h1>GitHub Stalker</h1>
+  
+        <form>
+
+            <input id="input" placeholder="Enter Username"></input> <input type="button" id="button" value="stalk"></input>
+        
+        </form>
+  
+     <div class="container">
+        <div id="divr" class="invisible"></div>
+        <div id="div" class="invisible" ><div>
+    </div>
+
+    </body>
+
+    <script src="js/controllers/usercontroller.js"></script>
+    <script src="js/models/user.js"></script>
+    <script src="js/views/userviews.js"></script>
+    <script src="js/controllers/reporequest.js"></script>
+   
+    <script>
+        
+        let btn = document.querySelector("#button");
+
+        btn.onclick = (event) => {
+            event.preventDefault();
+
+            let input = document.querySelector("#input").value;
+
+
+      
+            UserController.geraUser(input);
+
+            UserRepos.showRepos(input);
+            input.value = ""
+        }
+    </script>
+</html>
