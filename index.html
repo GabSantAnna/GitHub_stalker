@@ -25,6 +25,8 @@
     <script src="js/controllers/usercontroller.js"></script>
     <script src="js/models/user.js"></script>
     <script src="js/views/userviews.js"></script>
+    <script src="js/models/userrepos.js"></script>
+    <script src="js/views/reposviews.js"></script>
     <script src="js/controllers/reporequest.js"></script>
    
     <script>
@@ -36,12 +38,11 @@
 
             let input = document.querySelector("#input").value;
 
-
-      
             UserController.geraUser(input);
+            ReposReq.getRepos(input);
+            input.value = "";
+            
 
-            UserRepos.showRepos(input);
-            input.value = ""
         }
     </script>
 </html>

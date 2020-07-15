@@ -1,26 +1,37 @@
-class UserRepos {
+class ReposReq {
 
     constructor() {
 
         throw new Error ("nao presica de instancia")
     }
-    static showRepos(input) {
 
-        let reqRepos = new XMLHttpRequest;
+    static getRepos(input) {
+
+        let reqRepos = new XMLHttpRequest();
         reqRepos.open("GET", `https://api.github.com/users/${input}/repos`)
 
         reqRepos.onload = () => {
-            let userRepos = JSON.parse(reqRepos.responseText);
-            console.log(userRepos);
+
+            let repos = JSON.parse(reqRepos.responseText);
+            console.log(repos);
             
             let divR = document.querySelector("#divr");
             divR.removeAttribute("class");
+            divR.innerHTML=""
 
-            userRepos.forEach(element => {
-            
+            let mostraRepos = new ReposViews();
+
+
+            for(let i = 0; i < repos.length; i++) {
+
+                let repoObj = new UserRepos(repos[i].name, repos[i].html_url);
+
+                divR.innerHTML += mostraRepos.showRepos(repoObj.showRepos());
                 
-            });
-        }
+            }
+            
+            
+        }                                                        
     
         reqRepos.send()
         
